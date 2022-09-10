@@ -1,6 +1,12 @@
 $(document).ready(function() {
     $('#top-date').text(moment().format("dddd, MMMM Do, YYYY"));
-}) 
+}); 
+
+// Trying to create currentTime variable to compare to past, present, future
+let timeBlockHour = parseInt($(this).prop("id"));
+console.log(timeBlockHour);
+console.log($(this));
+
 
 // Trying to save userInput into console log when saveBtn is clicked
 $('.saveBtn').on('click', function(event) {
@@ -13,17 +19,5 @@ $('.saveBtn').on('click', function(event) {
     console.log(textAreaInputValue);
 }); 
 
-//Trying to keep data in textarea box after
-//     if (tagName !== "h1" && tagName !== "h2" && tagName !== "p" && tagName !== "div") {
 
-//   } else {
-//     // Creates element based on tag entered by user
-//     var tag = document.createElement(tagName);
-  
-//     // Adds text content to created tag
-//     tag.textContent = "This was made via prompts. It's a " + tagName + ".";
-    
-//     // Appends tag as child of document body
-//     document.body.appendChild(tag);
-//   }
 
