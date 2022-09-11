@@ -25,21 +25,11 @@ $(".hour").each(function () {
 
 
 // Trying to save userInput into local storage log when saveBtn is clicked
-function renderLastRegistered(){
-    var inputText = localStorage.getItem("description");
-    var timeInput = localStorage.getItem("hour");
-    
-}
-
 $('.saveBtn').on('click', function(event) {
     event.preventDefault();
     console.log(event.target);
-    var inputText = document.querySelector(".description").value;
-    var timeInput = document.querySelector(".hour").value;
-    if(inputText === ""){
-        localStorage.setItem("description", description);
-        localStorage.setItem("hour")
-        renderLastRegistered();
-    }
+    var inputText = $(this).siblings("textarea").val();
+    var timeInput = $(this).siblings("div").text();
+        localStorage.setItem(timeInput,inputText)
 }); 
 
