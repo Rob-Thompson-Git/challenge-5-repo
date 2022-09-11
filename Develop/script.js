@@ -9,7 +9,7 @@ let currentHour = moment().format("HH");
 $(".hour").each(function () {
     let blockHour = parseInt($(this).attr("data-time"));
     
-    // console.log(timeBlockHour);
+    // console.log(blockHour);
     if (blockHour < currentHour) {
         $(this).siblings("textarea").addClass("past");
         $(this).siblings("textarea").removeClass("present");
@@ -25,16 +25,14 @@ $(".hour").each(function () {
 
 
 // Trying to save userInput into local storage log when saveBtn is clicked
+function lastRendered(){
+    var inputText = localStorage.getItem("description");
+    var timeInput = localStorage.getItem("data-time");
+}
+
 $('.saveBtn').on('click', function(event) {
     event.preventDefault();
     console.log(event.target);
-    console.log(event.target.dataset.time)
-    var hourClickedToSave = event.target.dataset.time;
-    var formattedIdFinder = "#text-area-hour-" + hourClickedToSave; // =>"#text-area-hour-9"
-    var textAreaInputValue = $(formattedIdFinder).val();
-    console.log(textAreaInputValue);
     
 }); 
-
-
 
